@@ -4,7 +4,7 @@
   "description": "nodejs c++ addons with v8 api nodejs的c++扩展，使用v8API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "(node-gyp configure)&&(node-gyp build)"
   },
   "repository": {
     "type": "git",

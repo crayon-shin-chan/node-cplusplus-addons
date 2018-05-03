@@ -1,5 +1,5 @@
 #include <node.h>
-
+#include <iostream>
 namespace demo
 {
 /* 方法回调信息，用来设置返回值等 */
@@ -15,9 +15,11 @@ using v8::Value;
 /* c++中执行方法，使用FunctionCallbackInfo来传递参数，设置返回值，获取v8上下文等 */
 void Method(const FunctionCallbackInfo<Value> &args)
 {
+    std::cout << "进入c++方法" << std::endl;
     /* 获取v8隔离区指针 */
     Isolate *isolate = args.GetIsolate();
     /* 设置返回值 */
+    
     args.GetReturnValue().Set(String::NewFromUtf8(isolate, "world"));
 }
 
