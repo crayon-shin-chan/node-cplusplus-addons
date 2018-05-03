@@ -306,6 +306,11 @@ ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
                  $(join ^,hello.target.mk)))),)
   include hello.target.mk
 endif
+ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
+    $(findstring $(join ^,$(prefix)),\
+                 $(join ^,napi.target.mk)))),)
+  include napi.target.mk
+endif
 
 quiet_cmd_regen_makefile = ACTION Regenerating $@
 cmd_regen_makefile = cd $(srcdir); /usr/local/node-v9.10.1-linux-x64/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "--toplevel-dir=." -I/home/czy/桌面/node-cplusplus-addons/build/config.gypi -I/usr/local/node-v9.10.1-linux-x64/lib/node_modules/npm/node_modules/node-gyp/addon.gypi -I/home/czy/.node-gyp/9.10.1/include/node/common.gypi "--depth=." "-Goutput_dir=." "--generator-output=build" "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/home/czy/.node-gyp/9.10.1" "-Dnode_gyp_dir=/usr/local/node-v9.10.1-linux-x64/lib/node_modules/npm/node_modules/node-gyp" "-Dnode_lib_file=/home/czy/.node-gyp/9.10.1/<(target_arch)/node.lib" "-Dmodule_root_dir=/home/czy/桌面/node-cplusplus-addons" "-Dnode_engine=v8" binding.gyp
