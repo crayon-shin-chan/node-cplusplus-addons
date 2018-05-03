@@ -27,7 +27,7 @@ void init(Local<Object> exports)
     NODE_SET_METHOD(exports, "hello", Method);
 }
 
-/* 在指定模块名上调用注册方法，模块名必须匹配c++编译后的二进制文件名 */
-/* 这是语句？还是宏？后面没有分号 */
+/* 在指定模块名上调用注册方法，模块名必须匹配c++编译后的二进制文件名 
+这是语句？还是宏？后面没有分号 */
 NODE_MODULE(NODE_GYP_MODULE_NAME, init)
 }
