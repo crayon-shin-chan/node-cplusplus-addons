@@ -1,0 +1,19 @@
+{
+  "name": "cplusplus-addons",
+  "version": "1.0.0",
+  "description": "nodejs c++ addons with v8 api nodejs的c++扩展，使用v8API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crayon-shin-chan/node-cplusplus-addons.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crayon-shin-chan/node-cplusplus-addons/issues"
+  },
+  "homepage": "https://github.com/crayon-shin-chan/node-cplusplus-addons#readme"
+}
