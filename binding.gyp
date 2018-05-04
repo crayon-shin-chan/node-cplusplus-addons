@@ -9,6 +9,9 @@
     },{
       "target_name": "add",
       "sources": [ "./src/add.cpp" ]
+    },{
+      "target_name": "callback",
+      "sources": [ "./src/callback.cpp" ]
     }
   ]
 }
