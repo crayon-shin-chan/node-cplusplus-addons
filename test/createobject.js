@@ -1,0 +1,5 @@
+const createObject = require('../build/Release/createobject.node')
+const user1 = createObject('李四',21)
+const user2 = createObject('张三',23)
+console.dir(user1)
+console.dir(user2)

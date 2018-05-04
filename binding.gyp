@@ -12,6 +12,9 @@
     },{
       "target_name": "callback",
       "sources": [ "./src/callback.cpp" ]
+    },{
+      "target_name": "createobject",
+      "sources": [ "./src/createobject.cpp" ]
     }
   ]
 }

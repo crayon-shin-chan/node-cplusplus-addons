@@ -1,0 +1,1 @@
+cmd_Release/obj.target/createobject.node := g++ -shared -pthread -rdynamic -m64  -Wl,-soname=createobject.node -o Release/obj.target/createobject.node -Wl,--start-group Release/obj.target/createobject/src/createobject.o -Wl,--end-group 
