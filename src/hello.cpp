@@ -19,7 +19,6 @@ void Method(const FunctionCallbackInfo<Value> &args)
     /* 获取v8隔离区指针 */
     Isolate *isolate = args.GetIsolate();
     /* 设置返回值 */
-    
     args.GetReturnValue().Set(String::NewFromUtf8(isolate, "world"));
 }
 
