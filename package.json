@@ -4,7 +4,7 @@
   "description": "nodejs c++ addons with v8 api nodejs的c++扩展，使用v8API",
   "main": "index.js",
   "scripts": {
-    "build": "(node-gyp configure)&&(node-gyp build)"
+    "build": "node-gyp configure build"
   },
   "repository": {
     "type": "git",
