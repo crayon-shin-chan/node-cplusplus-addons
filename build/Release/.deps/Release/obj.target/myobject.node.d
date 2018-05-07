@@ -1,0 +1,1 @@
+cmd_Release/obj.target/myobject.node := g++ -shared -pthread -rdynamic -m64  -Wl,-soname=myobject.node -o Release/obj.target/myobject.node -Wl,--start-group Release/obj.target/myobject/src/class/class.o Release/obj.target/myobject/src/class/myobject.o -Wl,--end-group 

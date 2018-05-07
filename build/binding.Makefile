@@ -3,4 +3,4 @@
 export builddir_name ?= ./build/.
 .PHONY: all
 all:
-	$(MAKE) objectfactory hello napi callback functionfactory add
+	$(MAKE) add hello functionfactory myobject napi callback objectfactory

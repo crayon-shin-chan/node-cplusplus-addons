@@ -18,6 +18,12 @@
     },{
       "target_name": "functionfactory",
       "sources": [ "./src/functionfactory.cpp" ]
+    },{
+      "target_name": "myobject",
+      "sources": [
+        "./src/class/class.cpp",
+        "./src/class/myobject.cpp"
+      ]
     }
   ]
 }
