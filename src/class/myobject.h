@@ -17,7 +17,6 @@ class MyObject : public node::ObjectWrap
   private:
     explicit MyObject(double value = 0);
     ~MyObject();
-
     static void New(const v8::FunctionCallbackInfo<v8::Value> &args);
     static void PlusOne(const v8::FunctionCallbackInfo<v8::Value> &args);
     /* 构造函数，为静态属性，一个v8函数 */

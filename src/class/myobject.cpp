@@ -28,7 +28,17 @@ MyObject::~MyObject()
 {
 }
 
-/* 初始化exports */
+/* 
+初始化exports,设置构造函数到导出对象
+构造函数与其他函数在v8中是一样的，都是通过传入FunctionCallbackInfo设置参数与返回值
+唯一不同是构造函数使用new调用，此时 FunctionCallbackInfo.IsConstructCall()为true
+而且构造函数必须放置在函数模板中，通过函数模板设置类名、实例方法等
+js的构造函数、原型函数与c++类的实例方法不是对应的，因为c++实例方法通过this访问对象
+构造函数中通过FunctionCallbackInfo.This()访问当前对象
+调用ObjectWrap.Wrap()方法包装FunctionCallbackInfo.This()，从而保证原型方法中返回的是包装后的对象
+原型方法中通过FunctionCallbackInfo.Holder() 来访问方法的隐式参数
+调用ObjectWrap.Unwrap()方法获取c++对象
+*/
 void MyObject::Init(Local<Object> exports)
 {
     Isolate *isolate = exports->GetIsolate();
@@ -85,5 +95,4 @@ void MyObject::PlusOne(const FunctionCallbackInfo<Value> &args)
     /* 设置返回值 */
     args.GetReturnValue().Set(Number::New(isolate, obj->value_));
 }
-
-} 
+}
