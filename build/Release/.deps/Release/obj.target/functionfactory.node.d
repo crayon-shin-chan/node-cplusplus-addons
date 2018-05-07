@@ -1,0 +1,1 @@
+cmd_Release/obj.target/functionfactory.node := g++ -shared -pthread -rdynamic -m64  -Wl,-soname=functionfactory.node -o Release/obj.target/functionfactory.node -Wl,--start-group Release/obj.target/functionfactory/src/functionfactory.o -Wl,--end-group 

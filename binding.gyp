@@ -15,6 +15,9 @@
     },{
       "target_name": "objectfactory",
       "sources": [ "./src/objectfactory.cpp" ]
+    },{
+      "target_name": "functionfactory",
+      "sources": [ "./src/functionfactory.cpp" ]
     }
   ]
 }
