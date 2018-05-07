@@ -313,11 +313,6 @@ ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
 endif
 ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
     $(findstring $(join ^,$(prefix)),\
-                 $(join ^,createobject.target.mk)))),)
-  include createobject.target.mk
-endif
-ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
-    $(findstring $(join ^,$(prefix)),\
                  $(join ^,hello.target.mk)))),)
   include hello.target.mk
 endif
@@ -325,6 +320,11 @@ ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
     $(findstring $(join ^,$(prefix)),\
                  $(join ^,napi.target.mk)))),)
   include napi.target.mk
+endif
+ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
+    $(findstring $(join ^,$(prefix)),\
+                 $(join ^,objectfactory.target.mk)))),)
+  include objectfactory.target.mk
 endif
 
 quiet_cmd_regen_makefile = ACTION Regenerating $@
