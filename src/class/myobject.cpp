@@ -85,6 +85,27 @@ void MyObject::New(const FunctionCallbackInfo<Value> &args)
     }
 }
 
+/* CreateObject方法中调用，不需要使用new调用 */
+void MyObject::NewInstance(const FunctionCallbackInfo<Value> &args)
+{
+    Isolate *isolate = args.GetIsolate();
+
+    const unsigned argc = 1;
+    /* 参数数组 */
+    Local<Value> argv[argc] = {args[0]};
+    /* 构造函数 */
+    Local<Function> cons = Local<Function>::New(isolate, constructor);
+    /* 当前上下文 */
+    Local<Context> context = isolate->GetCurrentContext();
+    /* 
+    调用构造函数，传入上下文、参数，返回对象
+    需要注意，在constructor已经被重置为模板生成的函数
+    */
+    Local<Object> instance = cons->NewInstance(context, argc, argv).ToLocalChecked();
+    /* 设置返回值为实例 */
+    args.GetReturnValue().Set(instance);
+}
+
 /* 原型方法 */
 void MyObject::PlusOne(const FunctionCallbackInfo<Value> &args)
 {

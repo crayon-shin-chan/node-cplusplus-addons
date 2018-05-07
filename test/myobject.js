@@ -1,6 +1,12 @@
-const { MyObject } = require('../build/Release/myobject.node')
+const { MyObject,CreateObject } = require('../build/Release/myobject.node')
 
 const o1 = new MyObject(23)
 const o2 = new MyObject(67)
 console.log(o1.plusOne())
 console.log(o2.plusOne())
+console.log(MyObject)
+const o3 = CreateObject(11)
+const o4 = CreateObject(77)
+console.log(o3.plusOne())
+console.log(o4.plusOne())
+console.log(CreateObject)
